@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.ankit_pc.dietmanager.DailryEggProducts">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Salted Butter"
+            android:onClick="onClickSaltedButter"
+            android:id="@+id/button_salted_butter" />
+
+        <Button
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Butter Without Salt"
+            android:onClick="onClickButterWithoutSalt"
+            android:id="@+id/button_butter_without_Salt" />
+
+        <Button
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Egg White"
+            android:onClick="onClickEggWhite"
+            android:id="@+id/button_egg_white" />
+
+        <Button
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Egg Yolk"
+            android:onClick="onClickEggYolk"
+            android:id="@+id/button_egg_yolk" />
+
+        <Button
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Icecream Sundae Cone"
+            android:onClick="onClickSundaeCone"
+            android:id="@+id/button_sundae_cone" />
+
+        <Button
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Soft Serve Chocolate"
+            android:onClick="onClickSoftServe"
+            android:id="@+id/button_soft_serve" />
+
+        <Button
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Yogurt Vannila"
+            android:onClick="onClickYogurtVannila"
+            android:id="@+id/button_yogurt_vannila" />
+
+        <Button
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Milk Buffalo"
+            android:onClick="onClickMilkBuffalo"
+            android:id="@+id/button_milk_buffalo" />
+
+
+
+    </LinearLayout>
+
+</ScrollView>

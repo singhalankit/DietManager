@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.ankit_pc.dietmanager.Nuts">
+
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Almonds"
+        android:onClick="onClickAlmonds"
+        android:id="@+id/button_almonds" />
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CashewNuts"
+        android:onClick="onClickCashew"
+        android:id="@+id/button_cashew" />
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pistachio"
+        android:onClick="onClickPistachio"
+        android:id="@+id/button_pistachio" />
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Walnuts"
+        android:onClick="onClickWalnuts"
+        android:id="@+id/button_walnuts" />
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Roasted Nuts without Salt"
+        android:onClick="onClickNutsWithoutSalt"
+        android:id="@+id/button_nuts_without_salt" />
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Roasted Nuts with Salt"
+        android:onClick="onClickNutsWithSalt"
+        android:id="@+id/button_nuts_with_salt" />
+
+</LinearLayout>

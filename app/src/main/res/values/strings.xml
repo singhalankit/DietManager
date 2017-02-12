@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">DietManager</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_fetch_nutrient_values">FetchNutrientValues</string>
+    <string name="title_activity_vegetables">Vegetables</string>
+</resources>

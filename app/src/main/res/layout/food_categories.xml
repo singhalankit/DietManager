@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VEGETABLES"
+        android:onClick="onClickVegetables"
+        android:id="@+id/button_vegetables" />
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fruits and Fruit Juices"
+        android:onClick="onClickFruits"
+        android:id="@+id/button_fruits" />
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nuts and Seed products"
+        android:onClick="onClickNuts"
+        android:id="@+id/button_nuts" />
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Baby Food"
+        android:onClick="onClickBabyFood"
+        android:id="@+id/button_baby" />
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dairy and Egg products"
+        android:onClick="onClickDairy"
+        android:id="@+id/button_dairy" />
+
+
+</LinearLayout>

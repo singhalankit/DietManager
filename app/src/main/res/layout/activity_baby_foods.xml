@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+  android:orientation="vertical"
+    tools:context="com.example.ankit_pc.dietmanager.BabyFoods">
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Apple Banana Juice"
+        android:onClick="onClickAppleBananaJuice"
+        android:id="@+id/button_apple_banana_juice" />
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Apple Cranberry Juice"
+        android:onClick="onClickAppleCranberryJuice"
+        android:id="@+id/button_apple_Cranberry_juice" />
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cookies"
+        android:onClick="onClickCookies"
+        android:id="@+id/button_cookies" />
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mixed Fruit Juice"
+        android:onClick="onClickMixedFruitJuice"
+        android:id="@+id/button_mixed_fruit_juice" />
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Orange Juice"
+        android:onClick="onClickOrangeJuice"
+        android:id="@+id/button_orange_juice" />
+
+</LinearLayout>

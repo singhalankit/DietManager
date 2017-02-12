@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.ankit_pc.dietmanager.Fruits">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Apples"
+        android:onClick="onClickApples"
+        android:id="@+id/button_apples" />
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Appricots"
+        android:onClick="onClickAppricots"
+        android:id="@+id/button_appricots" />
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Avacado"
+        android:onClick="onClickAvacado"
+        android:id="@+id/button_avacado" />
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bananas"
+        android:onClick="onClickBananas"
+        android:id="@+id/button_bananas" />
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Blackberries"
+        android:onClick="onClickBlackBerries"
+        android:id="@+id/button_black_berries" />
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Blueberries"
+        android:onClick="onClickBlueBerries"
+        android:id="@+id/button_blue_berries" />
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cherries"
+        android:onClick="onClickCherries"
+        android:id="@+id/button_cherries" />
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Grapes"
+        android:onClick="onClickGrapes"
+        android:id="@+id/button_grapes" />
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mangoes"
+        android:onClick="onClickMangoes"
+        android:id="@+id/button_mangoes" />
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Orange"
+        android:onClick="onClickOrange"
+        android:id="@+id/button_orange" />
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pears"
+        android:onClick="onClickPears"
+        android:id="@+id/button_pears" />
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pineapples"
+        android:onClick="onClickPineApples"
+        android:id="@+id/button_pine_apples" />
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Plums"
+        android:onClick="onClickPlums"
+        android:id="@+id/button_plums" />
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Strawberries"
+        android:onClick="onClickStrawBerries"
+        android:id="@+id/button_straw_berries" />
+
+</LinearLayout>
+</ScrollView>
