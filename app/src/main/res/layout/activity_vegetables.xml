@@ -13,7 +13,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Potatoes"
+        android:text="@string/potato"
+        android:contentDescription="@string/potato"
         android:onClick="onClickPotatoes"
         android:id="@+id/button_potatoes" />
 
@@ -21,7 +22,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Brocolli"
+        android:text="@string/brocolli"
+        android:contentDescription="@string/brocolli"
         android:onClick="onClickBrocolli"
         android:id="@+id/button_brocolli" />
 
@@ -29,7 +31,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cabbage"
+        android:text="@string/cabbage"
+        android:contentDescription="@string/cabbage"
         android:onClick="onClickCabbage"
         android:id="@+id/button_cabbage" />
 
@@ -37,7 +40,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Carrots"
+        android:text="@string/carrot"
+        android:contentDescription="@string/carrot"
         android:onClick="onClickCarrots"
         android:id="@+id/button_carrots" />
 
@@ -45,7 +49,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CauliFlower"
+        android:text="@string/cauliflower"
+        android:contentDescription="@string/cauliflower"
         android:onClick="onClickCauli"
         android:id="@+id/button_cauli" />
 
@@ -53,21 +58,24 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sweet Corn"
+        android:text="@string/sweet_corn"
+        android:contentDescription="@string/sweet_corn"
         android:onClick="onClickSCorn"
         android:id="@+id/button_Scorn" />
     <Button
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cucumber"
+        android:text="@string/cucumber"
+        android:contentDescription="@string/cucumber"
         android:onClick="onClickCucumber"
         android:id="@+id/button_cucumber" />
     <Button
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Eggplant"
+        android:text="@string/egg_plant"
+        android:contentDescription="@string/egg_plant"
         android:onClick="onClickEggplant"
         android:id="@+id/button_eggplant" />
 

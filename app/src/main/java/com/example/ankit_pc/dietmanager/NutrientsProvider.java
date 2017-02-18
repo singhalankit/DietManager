@@ -20,13 +20,16 @@ public class NutrientsProvider extends ContentProvider {
     private NutrientDBHelper mOpenHelper;
 
     static final int NUTRIENTS_WITH_PRODUCT_ID =100;
+    static final int NUTRIENTS  =101;
+
 
 
 
     public static UriMatcher createUriMatcher() {
         UriMatcher matcher = new UriMatcher(UriMatcher.NO_MATCH);
         String authority = NutrientContract.CONTENT_AUTHORITY;
-        matcher.addURI(authority, NutrientContract.PATH_NUTRIENT + "/#", NUTRIENTS_WITH_PRODUCT_ID);
+        matcher.addURI(authority,NutrientContract.PATH_NUTRIENT, NUTRIENTS);
+        matcher.addURI(authority, NutrientContract.PATH_NUTRIENT + "/*", NUTRIENTS_WITH_PRODUCT_ID);
 
         return matcher;
     }
@@ -59,7 +62,7 @@ public class NutrientsProvider extends ContentProvider {
                 cursor = db.query(
                         NutrientContract.NutrientsEntry.TABLE_NAME,
                         strings,
-                        NutrientContract.NutrientsEntry._ID + " = ?",
+                        NutrientContract.NutrientsEntry.COLUMN_PRODUCT_ID + " = ?",
                         new String[]{Long.toString(_id)},
                         null,
                         null,
@@ -74,7 +77,7 @@ public class NutrientsProvider extends ContentProvider {
         }
 
 
-        return null;
+        return cursor;
     }
 
     @Nullable
@@ -122,6 +125,36 @@ public class NutrientsProvider extends ContentProvider {
         getContext().getContentResolver().notifyChange(uri, null);
 
         return insertionUri;    }
+
+
+    @Override
+    public int bulkInsert(Uri uri, ContentValues[] values) {
+        final SQLiteDatabase db = mOpenHelper.getWritableDatabase();
+        final int match = sUriMatcher.match(uri);
+        switch (match) {
+            case NUTRIENTS:
+                db.beginTransaction();
+                int returnCount = 0;
+                try {
+                    for (ContentValues value : values) {
+
+                        long _id = db.insert(NutrientContract.NutrientsEntry.TABLE_NAME, null, value);
+                        if (_id != -1) {
+                            returnCount++;
+                        }
+                    }
+                    db.setTransactionSuccessful();
+                } finally {
+                    db.endTransaction();
+                }
+                getContext().getContentResolver().notifyChange(uri, null);
+                return returnCount;
+
+            default:
+                throw new UnsupportedOperationException("Unknown uri " + uri);
+        }
+    }
+
 
     @Override
     public int delete(Uri uri, String s, String[] strings) {

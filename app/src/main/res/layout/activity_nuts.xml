@@ -11,7 +11,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Almonds"
+        android:text="@string/almond"
+        android:contentDescription="@string/almond"
         android:onClick="onClickAlmonds"
         android:id="@+id/button_almonds" />
 
@@ -19,7 +20,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CashewNuts"
+        android:text="@string/cashew"
+        android:contentDescription="@string/cashew"
         android:onClick="onClickCashew"
         android:id="@+id/button_cashew" />
 
@@ -27,7 +29,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Pistachio"
+        android:text="@string/pista"
+        android:contentDescription="@string/pista"
         android:onClick="onClickPistachio"
         android:id="@+id/button_pistachio" />
 
@@ -35,7 +38,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Walnuts"
+        android:text="@string/walnut"
+        android:contentDescription="@string/walnut"
         android:onClick="onClickWalnuts"
         android:id="@+id/button_walnuts" />
 
@@ -43,7 +47,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Roasted Nuts without Salt"
+        android:text="@string/roasted_without_salt"
+        android:contentDescription="@string/roasted_without_salt"
         android:onClick="onClickNutsWithoutSalt"
         android:id="@+id/button_nuts_without_salt" />
 
@@ -51,7 +56,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Roasted Nuts with Salt"
+        android:text="@string/roasted_with_salt"
+        android:contentDescription="@string/roasted_with_salt"
         android:onClick="onClickNutsWithSalt"
         android:id="@+id/button_nuts_with_salt" />
 

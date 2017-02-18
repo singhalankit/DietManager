@@ -3,11 +3,16 @@ package com.example.ankit_pc.dietmanager;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.CursorLoader;
+import android.support.v4.content.Loader;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,8 +38,12 @@ import java.util.Vector;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class FetchNutrientValuesFragment extends Fragment {
+public class FetchNutrientValuesFragment extends Fragment implements android.support.v4.app.LoaderManager.LoaderCallbacks<Cursor> {
     private NutrientAdapter mNutrientsAdapter;
+    private static final int NUTIRENT_LOADER = 0;
+    private final String LOG_TAG = FetchNutrientValuesFragment.class.getSimpleName();
+    Intent nutrientsIntent = getActivity().getIntent();
+    String mproductID = nutrientsIntent.getStringExtra("Product ID");
 
     public FetchNutrientValuesFragment() {
 
@@ -44,6 +53,7 @@ public class FetchNutrientValuesFragment extends Fragment {
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        getLoaderManager().initLoader(NUTIRENT_LOADER, null, this);
         super.onActivityCreated(savedInstanceState);
         getNutrientsData();
 
@@ -62,11 +72,12 @@ public class FetchNutrientValuesFragment extends Fragment {
                              Bundle savedInstanceState) {
         final View rootView =  inflater.inflate(R.layout.fragment_fetch_nutrient_values, container, false);
 
-        mNutrientsAdapter = new NutrientAdapter(
+     /*   mNutrientsAdapter = new NutrientAdapter(
                 getActivity(),
                 R.layout.activity_show_nutrients,
                 new ArrayList<Nutrients>()
-        );
+        );*/
+        mNutrientsAdapter = new NutrientAdapter(getActivity(),null,0);
 
         ListView lstView;
         lstView = (ListView) rootView.findViewById(R.id.id_nutrients_listView);
@@ -76,8 +87,29 @@ public class FetchNutrientValuesFragment extends Fragment {
         return  rootView;
     }
 
+    @Override
+    public android.support.v4.content.Loader<Cursor> onCreateLoader(int id, Bundle args) {
+        Log.v(LOG_TAG,"Entered into Cursor loader");
 
-    public class formAPIURL extends AsyncTask<String,Void,List<Nutrients>> {
+        Intent nutrientsIntent = getActivity().getIntent();
+        String productID = nutrientsIntent.getStringExtra("Product ID");
+        Uri nutrientWithProductIdURI = NutrientContract.NutrientsEntry.buildNutrientWithProductId(
+                Long.parseLong(productID));
+        return new android.support.v4.content.CursorLoader(getActivity(),nutrientWithProductIdURI,null,null,null,null);
+    }
+
+    @Override
+    public void onLoadFinished(android.support.v4.content.Loader<Cursor> loader, Cursor data) {
+    mNutrientsAdapter.swapCursor(data);
+    }
+
+    @Override
+    public void onLoaderReset(android.support.v4.content.Loader<Cursor> loader) {
+
+    }
+
+
+    public class formAPIURL extends AsyncTask<String,Void,Cursor> {
         private final String LOG_TAG = formAPIURL.class.getSimpleName();
         String expectedFormat= "json";
         String nutrientType = "b";
@@ -91,7 +123,7 @@ public class FetchNutrientValuesFragment extends Fragment {
         }
 
         @Override
-        protected List<Nutrients> doInBackground(String... params) {
+        protected Cursor doInBackground(String... params) {
 
 
 
@@ -194,7 +226,7 @@ public class FetchNutrientValuesFragment extends Fragment {
 
 
 
-        private List<Nutrients> getNutrientValuesFromJson(String nutrientJsonStr) throws JSONException {
+        private Cursor getNutrientValuesFromJson(String nutrientJsonStr) throws JSONException {
 
             // Items to extract
             final String ARRAY_OF_NUTRIENTS = "nutrients";
@@ -206,6 +238,7 @@ public class FetchNutrientValuesFragment extends Fragment {
                 JSONObject nutrientsJson = new JSONObject(nutrientJsonStr);
                 JSONObject reportsObject = nutrientsJson.getJSONObject("report");
                 JSONObject foodsObject  = reportsObject.getJSONObject("food");
+                long productID = foodsObject.getInt("ndbno");
                 JSONArray nutrientsArray = foodsObject.getJSONArray(ARRAY_OF_NUTRIENTS);
                 int nutrientsLength = nutrientsArray.length();
                 Log.v(LOG_TAG,"Nutrients array length" + nutrientsLength);
@@ -218,44 +251,79 @@ public class FetchNutrientValuesFragment extends Fragment {
                 for (int i = 0; i < nutrientsLength; ++i) {
 
                     JSONObject nutrient = nutrientsArray.getJSONObject(i);
-                    int id = nutrient.getInt(ORIGINAL_ID);
+                    //int nutrientID = nutrient.getInt(ORIGINAL_ID);
                     String title = nutrient.getString(NUTRIENT_NAME);
                     String quantity = nutrient.getString(NUTRIENT_QUANTITY);
                     String unit = nutrient.getString(NUTRIENT_UNIT);
                     Log.v(LOG_TAG, "Nutrient Name" + title);
 
-                    /*ContentValues nutrientValues = new ContentValues();
-                    nutrientValues.put("Product ID",id);
-                    nutrientValues.put("Nutrient Name",title);
-                    nutrientValues.put("Nutrient Quantity", quantity);
-                    nutrientValues.put("UNIT",unit);*/
-                    Nutrients newNutrient = new Nutrients(title,unit,quantity);
-                    nutrientsList.add(i,newNutrient);
+                    ContentValues nutrientValues = new ContentValues();
 
-                    //cVVector.add(nutrientValues);
+
+                    nutrientValues.put("nutrient_unit",unit);
+                    nutrientValues.put("nutrient_name",title);
+                    nutrientValues.put("nutrient_quan", quantity);
+                    nutrientValues.put("product_id",productID);
+
+
+
+                    cVVector.add(nutrientValues);
+
+                }
+                int inserted = 0;
+                Uri nutrientWithProductIdURI = NutrientContract.NutrientsEntry.buildNutrientWithProductId(
+                        productID);
+
+
+
+                Cursor cur = mContext.getContentResolver().query(nutrientWithProductIdURI,
+                        null, null, null, null);
+
+                if (cur.getCount() == 0) {
+
+                    // add to database
+                    if (cVVector.size() > 0) {
+                        // Student: call bulkInsert to add the weatherEntries to the database here
+                        ContentValues[] contentValues = new ContentValues[cVVector.size()];
+                        cVVector.toArray(contentValues);
+                        inserted = mContext.getContentResolver().bulkInsert(NutrientContract.NutrientsEntry.CONTENT_URI, contentValues);
+                    }
+                    Log.v(LOG_TAG, "FetchNutrientsTask Complete. " + inserted + " Inserted");
 
                 }
 
-                Log.v(LOG_TAG," Nutrients size" + nutrientsList.size());
 
-               /* String[] resultStrs = new String[cVVector.size()];
-                for ( int i = 0; i < cVVector.size(); i++ ) {
-                    ContentValues nutrientsData = cVVector.elementAt(i);
-                    resultStrs[i] = nutrientsData.getAsString("Nutrient Name") +
-                    "- " + nutrientsData.getAsString("UNIT") +
-                    "- " + nutrientsData.getAsString("Nutrient Quantity");
+                 cur = mContext.getContentResolver().query(nutrientWithProductIdURI,
+                        null, null, null, null);
+               // mNutrientsAdapter.changeCursor(cur);
 
-                }*/
-                return  nutrientsList;
 
-                // add to database
-             /*   if ( cVVector.size() > 0 ) {
+                    cVVector = new Vector<ContentValues>(cur.getCount());
+                    if (cur.moveToFirst()) {
+                        do {
+                            ContentValues cv = new ContentValues();
+                            DatabaseUtils.cursorRowToContentValues(cur, cv);
+                            cVVector.add(cv);
+                        } while (cur.moveToNext());
+                    }
 
-                    ContentValues[] contentValues = new ContentValues[cVVector.size()];
-                    cVVector.toArray(contentValues);
-                    inserted = mContext.getContentResolver().insert(NutrientContract.NutrientsEntry.CONTENT_URI, contentValues[0]);
-                    Log.v(LOG_TAG, "insertion completed " + inserted + " Inserted");
-                }*/
+                    Log.v(LOG_TAG, "FetchNutrientsTask Complete. " + cVVector.size() + " Inserted");
+
+
+                    for (int i = 0; i < cVVector.size(); i++) {
+                        ContentValues nutrientValues = cVVector.elementAt(i);
+                        Nutrients newNutrient = new Nutrients(nutrientValues.getAsString(NutrientContract.NutrientsEntry.COLUMN_NUTRIENT_NAME)
+                                , nutrientValues.getAsString(NutrientContract.NutrientsEntry.COLUMN_NUTRIENT_UNIT)
+                                , nutrientValues.getAsString(NutrientContract.NutrientsEntry.COLUMN_NUTRIENT_QUAN));
+                        nutrientsList.add(i, newNutrient);
+                    }
+
+
+                //Nutrients newNutrient = new Nutrients(title,unit,quantity);
+                // nutrientsList.add(i,newNutrient);
+
+                return  cur;
+
 
 
 
@@ -267,16 +335,14 @@ public class FetchNutrientValuesFragment extends Fragment {
         }
 
 
-       @Override
-        protected void onPostExecute(List<Nutrients> result) {
+      @Override
+        protected void onPostExecute(Cursor c) {
             //    super.onPostExecute(strings);
-            if(result != null ){
-                mNutrientsAdapter.clear();
-                for(Nutrients nutrientsStr : result){
-                    mNutrientsAdapter.add(nutrientsStr);
+            if(c != null ){
+                mNutrientsAdapter.changeCursor(c);
                 }
             }
-        }
+
 
     }
 }

@@ -15,7 +15,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Apples"
+        android:text="@string/apple"
+        android:contentDescription="@string/apple"
         android:onClick="onClickApples"
         android:id="@+id/button_apples" />
 
@@ -23,7 +24,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Appricots"
+        android:text="@string/apricot"
+        android:contentDescription="@string/apricot"
         android:onClick="onClickAppricots"
         android:id="@+id/button_appricots" />
 
@@ -31,7 +33,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Avacado"
+        android:text="@string/avacado"
+        android:contentDescription="@string/avacado"
         android:onClick="onClickAvacado"
         android:id="@+id/button_avacado" />
 
@@ -39,7 +42,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Bananas"
+        android:text="@string/banana"
+        android:contentDescription="@string/banana"
         android:onClick="onClickBananas"
         android:id="@+id/button_bananas" />
 
@@ -47,7 +51,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Blackberries"
+        android:text="@string/blackberry"
+        android:contentDescription="@string/blackberry"
         android:onClick="onClickBlackBerries"
         android:id="@+id/button_black_berries" />
 
@@ -55,7 +60,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Blueberries"
+        android:text="@string/blueberry"
+        android:contentDescription="@string/blueberry"
         android:onClick="onClickBlueBerries"
         android:id="@+id/button_blue_berries" />
 
@@ -63,7 +69,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cherries"
+        android:text="@string/cherry"
+        android:contentDescription="@string/cherry"
         android:onClick="onClickCherries"
         android:id="@+id/button_cherries" />
 
@@ -71,7 +78,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Grapes"
+        android:text="@string/grapes"
+        android:contentDescription="@string/grapes"
         android:onClick="onClickGrapes"
         android:id="@+id/button_grapes" />
 
@@ -79,7 +87,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Mangoes"
+        android:text="@string/mangoes"
+        android:contentDescription="@string/mangoes"
         android:onClick="onClickMangoes"
         android:id="@+id/button_mangoes" />
 
@@ -87,7 +96,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Orange"
+        android:text="@string/orange"
+        android:contentDescription="@string/orange"
         android:onClick="onClickOrange"
         android:id="@+id/button_orange" />
 
@@ -95,7 +105,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Pears"
+        android:text="@string/pears"
+        android:contentDescription="@string/pears"
         android:onClick="onClickPears"
         android:id="@+id/button_pears" />
 
@@ -103,7 +114,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Pineapples"
+        android:text="@string/pineapple"
+        android:contentDescription="@string/pineapple"
         android:onClick="onClickPineApples"
         android:id="@+id/button_pine_apples" />
 
@@ -111,7 +123,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Plums"
+        android:text="@string/plum"
+        android:contentDescription="@string/plum"
         android:onClick="onClickPlums"
         android:id="@+id/button_plums" />
 
@@ -119,7 +132,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Strawberries"
+        android:text="@string/strawberry"
+        android:contentDescription="@string/strawberry"
         android:onClick="onClickStrawBerries"
         android:id="@+id/button_straw_berries" />
 

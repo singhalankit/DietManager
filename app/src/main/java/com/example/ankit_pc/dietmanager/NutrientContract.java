@@ -28,31 +28,13 @@ public class NutrientContract {
 
         public static final String TABLE_NAME = "nutrients";
 
-       // public static final String COLUMN_PRODUCT_ID = "product_id";
-        public static final String COLUMN_PRODUCT_NAME = "product_name";
-        public static final String COLUMN_NUTRIENT1_ID = "nutrient1_id";
-        public static final String COLUMN_NUTRIENT1_NAME = "nutrient1_name";
-        public static final String COLUMN_NUTRIENT1_QUAN = "nutrient1_quan";
-        public static final String COLUMN_NUTRIENT2_ID = "nutrient2_id";
-        public static final String COLUMN_NUTRIENT2_NAME = "nutrient2_name";
-        public static final String COLUMN_NUTRIENT2_QUAN = "nutrient2_quan";
-        public static final String COLUMN_NUTRIENT3_ID = "nutrient3_id";
-        public static final String COLUMN_NUTRIENT3_NAME = "nutrient3_name";
-        public static final String COLUMN_NUTRIENT3_QUAN = "nutrient3_quan";
-        public static final String COLUMN_NUTRIENT4_ID = "nutrient4_id";
-        public static final String COLUMN_NUTRIENT4_NAME = "nutrient4_name";
-        public static final String COLUMN_NUTRIENT4_QUAN = "nutrient4_quan";
-        public static final String COLUMN_NUTRIENT5_ID = "nutrient5_id";
-        public static final String COLUMN_NUTRIENT5_NAME = "nutrient5_name";
-        public static final String COLUMN_NUTRIENT5_QUAN = "nutrient5_quan";
-        public static final String COLUMN_NUTRIENT6_ID = "nutrient6_id";
-        public static final String COLUMN_NUTRIENT6_NAME = "nutrient6_name";
-        public static final String COLUMN_NUTRIENT6_QUAN = "nutrient6_quan";
+        public static final String COLUMN_PRODUCT_ID = "product_id";
+        public static final String COLUMN_NUTRIENT_UNIT = "nutrient_unit";
+        //public static final String COLUMN_NUTRIENT_ID = "nutrient_id";
+        public static final String COLUMN_NUTRIENT_NAME = "nutrient_name";
+        public static final String COLUMN_NUTRIENT_QUAN = "nutrient_quan";
 
-
-
-
-        /**
+                /**
          * This method creates a URI for addressing a movie according to its poster URL
          *
          * @param posterUrl The stringly-typed URL fetched from the cloud service

@@ -7,7 +7,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="VEGETABLES"
+        android:text="@string/vegetables"
+        android:contentDescription="@string/vegetables"
         android:onClick="onClickVegetables"
         android:id="@+id/button_vegetables" />
 
@@ -15,7 +16,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fruits and Fruit Juices"
+        android:text="@string/fruits"
+        android:contentDescription="@string/fruits"
         android:onClick="onClickFruits"
         android:id="@+id/button_fruits" />
 
@@ -23,7 +25,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nuts and Seed products"
+        android:text="@string/nuts"
+        android:contentDescription="@string/nuts"
         android:onClick="onClickNuts"
         android:id="@+id/button_nuts" />
 
@@ -31,7 +34,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Baby Food"
+        android:text="@string/baby_food"
+        android:contentDescription="@string/baby_food"
         android:onClick="onClickBabyFood"
         android:id="@+id/button_baby" />
 
@@ -39,7 +43,8 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Dairy and Egg products"
+        android:text="@string/dairy"
+        android:contentDescription="@string/dairy"
         android:onClick="onClickDairy"
         android:id="@+id/button_dairy" />
 

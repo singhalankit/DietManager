@@ -1,6 +1,7 @@
 package com.example.ankit_pc.dietmanager;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,11 +11,24 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 
+import com.google.android.gms.common.api.GoogleApiClient;
+
+import butterknife.BindView;
+
+
+
 public class MainActivity extends AppCompatActivity {
+
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,14 +36,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.content_main);
 
         AdView mAdView = (AdView) findViewById(R.id.adView);
+        //@BindView(R.id.adView) AdView mAdView;
 
         AdRequest adRequest = new AdRequest.Builder().build();
 
         mAdView.loadAd(adRequest);
 
 
-       // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-       // setSupportActionBar(toolbar);
+        // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        // setSupportActionBar(toolbar);
 
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -41,10 +56,12 @@ public class MainActivity extends AppCompatActivity {
         });*/
 
 
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+       // client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
-    public void onContinueClick(View v)
-    {
+    public void onContinueClick(View v) {
         Intent categoryIntent = new Intent(getApplication(), FoodCategory.class);
         startActivity(categoryIntent);
     }
@@ -69,5 +86,18 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
     }
 }

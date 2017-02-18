@@ -16,6 +16,10 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
+        <provider
+            android:authorities="com.example.ankit_pc.dietmanager"
+            android:name=".NutrientsProvider"/>
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

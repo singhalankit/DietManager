@@ -3,4 +3,57 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_fetch_nutrient_values">FetchNutrientValues</string>
     <string name="title_activity_vegetables">Vegetables</string>
+    <string name="apple_banana">Apple Banana Juice</string>
+    <string name="apple_cranberry">Apple Cranberry Juice</string>
+    <string name="cookies">Cookies</string>
+    <string name="mixed_fruit">Mixed Fruit Juice</string>
+    <string name="orange_juice">Orange Juice</string>
+
+    <string name="salted_butter">Salted Butter</string>
+    <string name="butter_without_salt">Butter Without Salt</string>
+    <string name="egg_white">Egg White</string>
+    <string name="egg_yolk">Egg Yolk</string>
+    <string name="sundae_cone">Icecream Sundae Cone</string>
+    <string name="soft_serve">Soft Serve Chocolate</string>
+    <string name="yogurt_vannila">Yogurt Vannila</string>
+    <string name="milk_buffalo">Buffalo Milk</string>
+
+    <string name="apple">Apples</string>
+    <string name="apricot">Appricots</string>
+    <string name="avacado">Avacado</string>
+    <string name="banana">Bananas</string>
+    <string name="blackberry">Blackberries</string>
+    <string name="blueberry">Blueberries</string>
+    <string name="cherry">Cherries</string>
+    <string name="grapes">Grapes</string>
+    <string name="mangoes">Mangoes</string>
+    <string name="orange">Orange</string>
+    <string name="pears">Pears</string>
+    <string name="pineapple">Pineapples</string>
+    <string name="plum">Plums</string>
+    <string name="strawberry">Strawberries</string>
+
+    <string name="almond">Almonds</string>
+    <string name="cashew">Cashew Nuts</string>
+    <string name="pista">Pistachio</string>
+    <string name="walnut">Walnuts</string>
+    <string name="roasted_with_salt">Roasted Nuts With Salt</string>
+    <string name="roasted_without_salt">Roasted Nuts Without Salt</string>
+
+
+    <string name="potato">Potatoes</string>
+    <string name="brocolli">Brocolli</string>
+    <string name="cabbage">Cabbage</string>
+    <string name="carrot">Carrots</string>
+    <string name="cauliflower">Cauliflower</string>
+    <string name="sweet_corn">Sweet Corn</string>
+    <string name="cucumber">Cucumber</string>
+    <string name="egg_plant">Egg Plant</string>
+
+    <string name="vegetables">VEGETABLES</string>
+    <string name="fruits">FRUITS AND FRUIT JUICES</string>
+    <string name="baby_food">BABY FOOD</string>
+    <string name="dairy">DAIRY AND EGG PRODUCTS</string>
+    <string name="nuts">NUTS AND SEED PRODUCTS</string>
+
 </resources>
