@@ -1,9 +1,17 @@
 apply plugin: 'com.android.application'
 
+
 android {
+    signingConfigs {
+        config {
+            keyAlias 'Diet Manager'
+            keyPassword 'singhal123'
+            storeFile file('E:/AndroidStudioProjects/DietManager_v1.3/keystore.jks')
+            storePassword 'singhal123'
+        }
+    }
     compileSdkVersion 25
     buildToolsVersion "24.0.2"
-
     defaultConfig {
         applicationId "com.example.ankit_pc.dietmanager"
         minSdkVersion 15
@@ -15,17 +23,24 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            signingConfig signingConfigs.config
         }
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.google.android.gms:play-services-ads:10.0.1'
+    compile 'com.google.android.gms:play-services-analytics:10.0.1'
     compile 'com.android.support:appcompat-v7:25.1.0'
     compile 'com.android.support:design:25.1.0'
     compile 'com.jakewharton:butterknife:8.5.1'
-
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 
 }
+
+

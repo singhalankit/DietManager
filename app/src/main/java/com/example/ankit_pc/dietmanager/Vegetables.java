@@ -17,59 +17,52 @@ public class Vegetables extends AppCompatActivity {
 
     }
 
-    public void onClickPotatoes(View v)
-    {
+    public void onClickPotatoes(View v) {
         Intent nutrientsIntent = new Intent(getApplication(), FetchNutrientValues.class);
-        nutrientsIntent.putExtra("Product ID","11362");
+        nutrientsIntent.putExtra("Product ID", "11362");
         startActivity(nutrientsIntent);
     }
 
-    public void onClickBrocolli(View v)
-    {
+    public void onClickBrocolli(View v) {
         Intent nutrientsIntent = new Intent(getApplication(), FetchNutrientValues.class);
-        nutrientsIntent.putExtra("Product ID","11090");
+        nutrientsIntent.putExtra("Product ID", "11090");
         startActivity(nutrientsIntent);
     }
 
-    public void onClickCabbage(View v)
-    {
+    public void onClickCabbage(View v) {
         Intent nutrientsIntent = new Intent(getApplication(), FetchNutrientValues.class);
-        nutrientsIntent.putExtra("Product ID","11109");
-        startActivity(nutrientsIntent);
-    }
-    public void onClickCarrots(View v)
-    {
-        Intent nutrientsIntent = new Intent(getApplication(), FetchNutrientValues.class);
-        nutrientsIntent.putExtra("Product ID","11124");
+        nutrientsIntent.putExtra("Product ID", "11109");
         startActivity(nutrientsIntent);
     }
 
-    public void onClickCauli(View v)
-    {
+    public void onClickCarrots(View v) {
         Intent nutrientsIntent = new Intent(getApplication(), FetchNutrientValues.class);
-        nutrientsIntent.putExtra("Product ID","11135");
+        nutrientsIntent.putExtra("Product ID", "11124");
         startActivity(nutrientsIntent);
     }
 
-    public void onClickSCorn(View v)
-    {
+    public void onClickCauli(View v) {
         Intent nutrientsIntent = new Intent(getApplication(), FetchNutrientValues.class);
-        nutrientsIntent.putExtra("Product ID","11167");
+        nutrientsIntent.putExtra("Product ID", "11135");
         startActivity(nutrientsIntent);
     }
 
-    public void onClickCucumber(View v)
-    {
+    public void onClickSCorn(View v) {
         Intent nutrientsIntent = new Intent(getApplication(), FetchNutrientValues.class);
-        nutrientsIntent.putExtra("Product ID","11205");
+        nutrientsIntent.putExtra("Product ID", "11167");
+        startActivity(nutrientsIntent);
+    }
+
+    public void onClickCucumber(View v) {
+        Intent nutrientsIntent = new Intent(getApplication(), FetchNutrientValues.class);
+        nutrientsIntent.putExtra("Product ID", "11205");
         startActivity(nutrientsIntent);
     }
 
 
-    public void onClickEggplant(View v)
-    {
+    public void onClickEggplant(View v) {
         Intent nutrientsIntent = new Intent(getApplication(), FetchNutrientValues.class);
-        nutrientsIntent.putExtra("Product ID","11209");
+        nutrientsIntent.putExtra("Product ID", "11209");
         startActivity(nutrientsIntent);
     }
 

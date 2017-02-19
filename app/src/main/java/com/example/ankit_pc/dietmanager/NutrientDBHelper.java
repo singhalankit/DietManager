@@ -8,22 +8,21 @@ import android.util.Log;
 /**
  * Created by ANKIT_PC on 22-01-2017.
  */
-    public class NutrientDBHelper extends SQLiteOpenHelper {
+public class NutrientDBHelper extends SQLiteOpenHelper {
     private final String LOG_TAG = NutrientDBHelper.class.getSimpleName();
 
     private static final int DATABASE_VERSION = 7;
 
     static final String DATABASE_NAME = "nutrient_info_v1.1.db";
 
-    public NutrientDBHelper(Context context){
+    public NutrientDBHelper(Context context) {
 
-        super(context,DATABASE_NAME,null,DATABASE_VERSION);
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
 
 
         final String createNutrientsTable = "CREATE TABLE " + NutrientContract.NutrientsEntry.TABLE_NAME + " ( "
@@ -34,9 +33,9 @@ import android.util.Log;
                 + NutrientContract.NutrientsEntry.COLUMN_NUTRIENT_QUAN + " INTEGER NOT NULL ); ";
 
 
-                db.execSQL(createNutrientsTable);
+        db.execSQL(createNutrientsTable);
 
-        Log.v(LOG_TAG," - Table created successfully");
+        Log.v(LOG_TAG, " - Table created successfully");
     }
 
     @Override

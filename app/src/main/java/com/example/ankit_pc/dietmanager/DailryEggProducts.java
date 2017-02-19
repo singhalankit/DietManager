@@ -13,59 +13,51 @@ public class DailryEggProducts extends AppCompatActivity {
         setContentView(R.layout.activity_dailry_egg_products);
     }
 
-    public void onClickSaltedButter(View v)
-    {
+    public void onClickSaltedButter(View v) {
         Intent nutrientsIntent = new Intent(getApplication(), FetchNutrientValues.class);
-        nutrientsIntent.putExtra("Product ID","01001");
+        nutrientsIntent.putExtra("Product ID", "01001");
         startActivity(nutrientsIntent);
     }
 
-    public void onClickButterWithoutSalt(View v)
-    {
+    public void onClickButterWithoutSalt(View v) {
         Intent nutrientsIntent = new Intent(getApplication(), FetchNutrientValues.class);
-        nutrientsIntent.putExtra("Product ID","01145");
+        nutrientsIntent.putExtra("Product ID", "01145");
         startActivity(nutrientsIntent);
     }
 
-    public void onClickEggWhite(View v)
-    {
+    public void onClickEggWhite(View v) {
         Intent nutrientsIntent = new Intent(getApplication(), FetchNutrientValues.class);
-        nutrientsIntent.putExtra("Product ID","01124");
+        nutrientsIntent.putExtra("Product ID", "01124");
         startActivity(nutrientsIntent);
     }
 
-    public void onClickEggYolk(View v)
-    {
+    public void onClickEggYolk(View v) {
         Intent nutrientsIntent = new Intent(getApplication(), FetchNutrientValues.class);
-        nutrientsIntent.putExtra("Product ID","01137");
+        nutrientsIntent.putExtra("Product ID", "01137");
         startActivity(nutrientsIntent);
     }
 
-    public void onClickSundaeCone(View v)
-    {
+    public void onClickSundaeCone(View v) {
         Intent nutrientsIntent = new Intent(getApplication(), FetchNutrientValues.class);
-        nutrientsIntent.putExtra("Product ID","01301");
+        nutrientsIntent.putExtra("Product ID", "01301");
         startActivity(nutrientsIntent);
     }
 
-    public void onClickSoftServe(View v)
-    {
+    public void onClickSoftServe(View v) {
         Intent nutrientsIntent = new Intent(getApplication(), FetchNutrientValues.class);
-        nutrientsIntent.putExtra("Product ID","01236");
+        nutrientsIntent.putExtra("Product ID", "01236");
         startActivity(nutrientsIntent);
     }
 
-    public void onClickYogurtVannila(View v)
-    {
+    public void onClickYogurtVannila(View v) {
         Intent nutrientsIntent = new Intent(getApplication(), FetchNutrientValues.class);
-        nutrientsIntent.putExtra("Product ID","01295");
+        nutrientsIntent.putExtra("Product ID", "01295");
         startActivity(nutrientsIntent);
     }
 
-    public void onClickMilkBuffalo(View v)
-    {
+    public void onClickMilkBuffalo(View v) {
         Intent nutrientsIntent = new Intent(getApplication(), FetchNutrientValues.class);
-        nutrientsIntent.putExtra("Product ID","01108");
+        nutrientsIntent.putExtra("Product ID", "01108");
         startActivity(nutrientsIntent);
     }
 }

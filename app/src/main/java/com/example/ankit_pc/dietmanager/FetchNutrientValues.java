@@ -15,11 +15,7 @@ public class FetchNutrientValues extends AppCompatActivity {
         setContentView(R.layout.content_fetch_nutrient_values);
 
 
-
-
-
     }
-
 
 
 }

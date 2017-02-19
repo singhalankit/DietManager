@@ -13,39 +13,34 @@ public class BabyFoods extends AppCompatActivity {
         setContentView(R.layout.activity_baby_foods);
     }
 
-    public void onClickAppleBananaJuice(View v)
-    {
+    public void onClickAppleBananaJuice(View v) {
         Intent nutrientsIntent = new Intent(getApplication(), FetchNutrientValues.class);
-        nutrientsIntent.putExtra("Product ID","03167");
+        nutrientsIntent.putExtra("Product ID", "03167");
         startActivity(nutrientsIntent);
     }
 
 
-    public void onClickAppleCranberryJuice(View v)
-    {
+    public void onClickAppleCranberryJuice(View v) {
         Intent nutrientsIntent = new Intent(getApplication(), FetchNutrientValues.class);
-        nutrientsIntent.putExtra("Product ID","03169");
+        nutrientsIntent.putExtra("Product ID", "03169");
         startActivity(nutrientsIntent);
     }
 
-    public void onClickCookies(View v)
-    {
+    public void onClickCookies(View v) {
         Intent nutrientsIntent = new Intent(getApplication(), FetchNutrientValues.class);
-        nutrientsIntent.putExtra("Product ID","03213");
+        nutrientsIntent.putExtra("Product ID", "03213");
         startActivity(nutrientsIntent);
     }
 
-    public void onClickMixedFruitJuice(View v)
-    {
+    public void onClickMixedFruitJuice(View v) {
         Intent nutrientsIntent = new Intent(getApplication(), FetchNutrientValues.class);
-        nutrientsIntent.putExtra("Product ID","03179");
+        nutrientsIntent.putExtra("Product ID", "03179");
         startActivity(nutrientsIntent);
     }
 
-    public void onClickOrangeJuice(View v)
-    {
+    public void onClickOrangeJuice(View v) {
         Intent nutrientsIntent = new Intent(getApplication(), FetchNutrientValues.class);
-        nutrientsIntent.putExtra("Product ID","03172");
+        nutrientsIntent.putExtra("Product ID", "03172");
         startActivity(nutrientsIntent);
     }
 

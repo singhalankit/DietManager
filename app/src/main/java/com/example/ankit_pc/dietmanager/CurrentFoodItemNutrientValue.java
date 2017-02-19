@@ -40,7 +40,7 @@ public class CurrentFoodItemNutrientValue extends IntentService
 
 
         FetchNutrientValuesFragment fnv = new FetchNutrientValuesFragment();
-                Uri nutrientWithProductIdURI = NutrientContract.NutrientsEntry.buildNutrientWithProductId(
+        Uri nutrientWithProductIdURI = NutrientContract.NutrientsEntry.buildNutrientWithProductId(
                 Long.parseLong(fnv.mproductID));
         Cursor data = getContentResolver().query(nutrientWithProductIdURI, NUTRIENT_COLUMNS, null,
                 null, null);
@@ -58,8 +58,6 @@ public class CurrentFoodItemNutrientValue extends IntentService
 
             // Tell the AppWidgetManager to perform an update on the current app widget
             appWidgetManager.updateAppWidget(appWidgetId, views);
-
-
 
 
         }

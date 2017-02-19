@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
     android:orientation="vertical"
@@ -7,12 +8,12 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:id="@+id/fragmentFetchNutrientValue">
+    android:id="@+id/widgetFetchNutrientValue">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/Heading"
+        android:id="@+id/widgetHeading"
         android:orientation="horizontal">
 
 
@@ -20,7 +21,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/Nutrient"
+            android:id="@+id/widgetNutrient"
             android:layout_weight="1"
             android:text="@string/nutrient_name" />
 
@@ -28,7 +29,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/Unit"
+            android:id="@+id/widgetUnit"
             android:layout_weight="1"
             android:text="@string/nutrient_unit" />
 
@@ -36,7 +37,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/Unit"
+            android:layout_toRightOf="@+id/widgetUnit"
             android:layout_weight="1"
             android:text="@string/nutrient_quan" />
 
@@ -46,7 +47,7 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/Heading"
-        android:id="@+id/id_nutrients_listView" />
+        android:layout_below="@+id/widgetHeading"
+        android:id="@+id/widget_nutrients_listView" />
 
 </RelativeLayout>

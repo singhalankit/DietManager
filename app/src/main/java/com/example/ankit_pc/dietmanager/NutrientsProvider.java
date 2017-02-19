@@ -19,21 +19,18 @@ public class NutrientsProvider extends ContentProvider {
     public static final UriMatcher sUriMatcher = createUriMatcher();
     private NutrientDBHelper mOpenHelper;
 
-    static final int NUTRIENTS_WITH_PRODUCT_ID =100;
-    static final int NUTRIENTS  =101;
-
-
+    static final int NUTRIENTS_WITH_PRODUCT_ID = 100;
+    static final int NUTRIENTS = 101;
 
 
     public static UriMatcher createUriMatcher() {
         UriMatcher matcher = new UriMatcher(UriMatcher.NO_MATCH);
         String authority = NutrientContract.CONTENT_AUTHORITY;
-        matcher.addURI(authority,NutrientContract.PATH_NUTRIENT, NUTRIENTS);
+        matcher.addURI(authority, NutrientContract.PATH_NUTRIENT, NUTRIENTS);
         matcher.addURI(authority, NutrientContract.PATH_NUTRIENT + "/*", NUTRIENTS_WITH_PRODUCT_ID);
 
         return matcher;
     }
-
 
 
     @Override
@@ -51,10 +48,7 @@ public class NutrientsProvider extends ContentProvider {
         Cursor cursor;
 
 
-
         switch (match) {
-
-
 
 
             case NUTRIENTS_WITH_PRODUCT_ID: {
@@ -69,7 +63,6 @@ public class NutrientsProvider extends ContentProvider {
                         null);
                 break;
             }
-
 
 
             default:
@@ -91,10 +84,10 @@ public class NutrientsProvider extends ContentProvider {
                 return NutrientContract.NutrientsEntry.CONTENT_ITEM_TYPE;
 
 
-
             default:
                 throw new UnsupportedOperationException("Unknown uri: " + uri);
-        }    }
+        }
+    }
 
     @Nullable
     @Override
@@ -102,7 +95,7 @@ public class NutrientsProvider extends ContentProvider {
         SQLiteDatabase db = mOpenHelper.getWritableDatabase();
         int match = sUriMatcher.match(uri);
         Uri insertionUri;
-        int Count =0;
+        int Count = 0;
 
         long insertedId;
 
@@ -124,7 +117,8 @@ public class NutrientsProvider extends ContentProvider {
 
         getContext().getContentResolver().notifyChange(uri, null);
 
-        return insertionUri;    }
+        return insertionUri;
+    }
 
 
     @Override

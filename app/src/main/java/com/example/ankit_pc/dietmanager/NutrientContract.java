@@ -34,7 +34,7 @@ public class NutrientContract {
         public static final String COLUMN_NUTRIENT_NAME = "nutrient_name";
         public static final String COLUMN_NUTRIENT_QUAN = "nutrient_quan";
 
-                /**
+        /**
          * This method creates a URI for addressing a movie according to its poster URL
          *
          * @param posterUrl The stringly-typed URL fetched from the cloud service
@@ -63,15 +63,9 @@ public class NutrientContract {
          * @param uri The URI of the movie
          * @return The poster URL fetched from the URI
          */
-    //    public static String getPosterUrlFromUri(Uri uri) {
-       //     return uri.getPathSegments().get(1);
-     //   }
-
-
-
-
-
-
+        //    public static String getPosterUrlFromUri(Uri uri) {
+        //     return uri.getPathSegments().get(1);
+        //   }
         public static long getIdFromUri(Uri uri) {
             return ContentUris.parseId(uri);
         }

@@ -84,9 +84,6 @@
             android:id="@+id/button_milk_buffalo" />
 
 
-
-
-
     </LinearLayout>
 
 </ScrollView>

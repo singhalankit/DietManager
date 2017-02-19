@@ -62,6 +62,7 @@
         android:contentDescription="@string/sweet_corn"
         android:onClick="onClickSCorn"
         android:id="@+id/button_Scorn" />
+
     <Button
         android:layout_weight="1"
         android:layout_width="match_parent"
@@ -70,6 +71,7 @@
         android:contentDescription="@string/cucumber"
         android:onClick="onClickCucumber"
         android:id="@+id/button_cucumber" />
+
     <Button
         android:layout_weight="1"
         android:layout_width="match_parent"
@@ -78,9 +80,6 @@
         android:contentDescription="@string/egg_plant"
         android:onClick="onClickEggplant"
         android:id="@+id/button_eggplant" />
-
-
-
 
 
     <!--<android.support.design.widget.AppBarLayout

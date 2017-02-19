@@ -13,51 +13,42 @@ public class Nuts extends AppCompatActivity {
         setContentView(R.layout.activity_nuts);
     }
 
-    public void onClickAlmonds(View v)
-    {
+    public void onClickAlmonds(View v) {
         Intent nutrientsIntent = new Intent(getApplication(), FetchNutrientValues.class);
-        nutrientsIntent.putExtra("Product ID","12061");
+        nutrientsIntent.putExtra("Product ID", "12061");
         startActivity(nutrientsIntent);
     }
 
-    public void onClickCashew(View v)
-    {
+    public void onClickCashew(View v) {
         Intent nutrientsIntent = new Intent(getApplication(), FetchNutrientValues.class);
-        nutrientsIntent.putExtra("Product ID","12087");
+        nutrientsIntent.putExtra("Product ID", "12087");
         startActivity(nutrientsIntent);
     }
 
-    public void onClickPistachio(View v)
-    {
+    public void onClickPistachio(View v) {
         Intent nutrientsIntent = new Intent(getApplication(), FetchNutrientValues.class);
-        nutrientsIntent.putExtra("Product ID","12151");
+        nutrientsIntent.putExtra("Product ID", "12151");
         startActivity(nutrientsIntent);
     }
 
-    public void onClickNutsWithoutSalt(View v)
-    {
+    public void onClickNutsWithoutSalt(View v) {
         Intent nutrientsIntent = new Intent(getApplication(), FetchNutrientValues.class);
-        nutrientsIntent.putExtra("Product ID","12138");
+        nutrientsIntent.putExtra("Product ID", "12138");
         startActivity(nutrientsIntent);
     }
 
 
-    public void onClickWalnuts(View v)
-    {
+    public void onClickWalnuts(View v) {
         Intent nutrientsIntent = new Intent(getApplication(), FetchNutrientValues.class);
-        nutrientsIntent.putExtra("Product ID","12155");
+        nutrientsIntent.putExtra("Product ID", "12155");
         startActivity(nutrientsIntent);
     }
 
-    public void onClickNutsWithSalt(View v)
-    {
+    public void onClickNutsWithSalt(View v) {
         Intent nutrientsIntent = new Intent(getApplication(), FetchNutrientValues.class);
-        nutrientsIntent.putExtra("Product ID","12638");
+        nutrientsIntent.putExtra("Product ID", "12638");
         startActivity(nutrientsIntent);
     }
-
-
-
 
 
 }

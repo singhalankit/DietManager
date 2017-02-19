@@ -18,9 +18,9 @@ import java.util.List;
 public class NutrientAdapter extends CursorAdapter {
     Context mContext;
 
-    public NutrientAdapter(Context context, Cursor c, int flags){
+    public NutrientAdapter(Context context, Cursor c, int flags) {
         super(context, c, flags);
-        mContext=context;
+        mContext = context;
     }
 
     public static class ViewHolder {
@@ -32,9 +32,9 @@ public class NutrientAdapter extends CursorAdapter {
 
         public ViewHolder(View v) {
 
-             tvName = (TextView) v.findViewById(R.id.id_nutrient_name);
-             tvUnit = (TextView) v.findViewById(R.id.id_nutrient_unit);
-             tvQuantity = (TextView) v.findViewById(R.id.id_nutrient_quantity);
+            tvName = (TextView) v.findViewById(R.id.id_nutrient_name);
+            tvUnit = (TextView) v.findViewById(R.id.id_nutrient_unit);
+            tvQuantity = (TextView) v.findViewById(R.id.id_nutrient_quantity);
 
         }
     }

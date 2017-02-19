@@ -15,17 +15,14 @@
 
     >
 
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
         android:layout_weight="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-6966497821155933/2587564005"
-        >
-    </com.google.android.gms.ads.AdView>
+        ads:adUnitId="ca-app-pub-6966497821155933/2587564005"></com.google.android.gms.ads.AdView>
 
     <TextView
         android:layout_weight="3"
@@ -41,9 +38,9 @@
         android:layout_height="wrap_content"
         android:onClick="onContinueClick"
 
-        android:text="CONTINUE"
+        android:text="@string/continue_button"
 
-       />
+        />
 
 
 </LinearLayout>

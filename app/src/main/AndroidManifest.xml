@@ -18,7 +18,7 @@
 
         <provider
             android:authorities="com.example.ankit_pc.dietmanager"
-            android:name=".NutrientsProvider"/>
+            android:name=".NutrientsProvider" />
 
         <activity
             android:name=".MainActivity"
@@ -47,6 +47,22 @@
         <activity android:name=".Nuts" />
         <activity android:name=".BabyFoods" />
         <activity android:name=".DailryEggProducts"></activity>
+
+        <receiver
+            android:name=".CurrentNutrientWidgetProvider"
+            android:label="@string/title_widget_nutrient">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.example.android.sunshine.app.ACTION_DATA_UPDATED" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info" />
+        </receiver>
+
+
+
     </application>
 
 </manifest>
