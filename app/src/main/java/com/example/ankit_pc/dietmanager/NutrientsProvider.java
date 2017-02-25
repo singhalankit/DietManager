@@ -60,10 +60,21 @@ public class NutrientsProvider extends ContentProvider {
                         new String[]{Long.toString(_id)},
                         null,
                         null,
-                        null);
+                        sort);
                 break;
             }
+            case NUTRIENTS: {
+                cursor = db.query(
+                        NutrientContract.NutrientsEntry.TABLE_NAME,
+                        strings,
+                        NutrientContract.NutrientsEntry.COLUMN_SELECTED + " = ?",
+                        new String[]{"Y"},
+                        null,
+                        null,
+                        sort);
+                break;
 
+            }
 
             default:
                 throw new UnsupportedOperationException("Unknown uri: " + uri);
@@ -156,7 +167,27 @@ public class NutrientsProvider extends ContentProvider {
     }
 
     @Override
-    public int update(Uri uri, ContentValues contentValues, String s, String[] strings) {
-        return 0;
+    public int update(Uri uri, ContentValues contentValues, String selection, String[] selectionArgs) {
+        SQLiteDatabase db = mOpenHelper.getWritableDatabase();
+        int match = sUriMatcher.match(uri);
+        int rowsUpdated;
+
+        switch (match) {
+            case NUTRIENTS:
+                rowsUpdated = db.update(
+                        NutrientContract.NutrientsEntry.TABLE_NAME,
+                        contentValues,
+                        selection,
+                        selectionArgs);
+                break;
+            default:
+                throw new UnsupportedOperationException("Unknown uri: " + uri);
+
+        }
+        if (rowsUpdated != 0) {
+            getContext().getContentResolver().notifyChange(uri, null);
+        }
+
+        return rowsUpdated;
     }
 }

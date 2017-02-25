@@ -22,7 +22,7 @@ import java.util.Vector;
 
 public class ListProvider implements RemoteViewsService.RemoteViewsFactory {
 
-    private List<Nutrients> widgetNutrientsList = new ArrayList<Nutrients>() ;
+    private List<Nutrients> widgetNutrientsList = new ArrayList<Nutrients>();
     private ArrayAdapter<Nutrients> widgetAdapter;
     private Context context = null;
     private int appWidgetId;
@@ -42,17 +42,18 @@ public class ListProvider implements RemoteViewsService.RemoteViewsFactory {
     };
 
 
-
     private void populateListItem() {
 
 
         FetchNutrientValuesFragment fnv = new FetchNutrientValuesFragment();
-        Uri nutrientWithProductIdURI = NutrientContract.NutrientsEntry.buildNutrientWithProductId(
-                Long.parseLong(fnv.mproductID));
+        //Uri nutrientWithProductIdURI = NutrientContract.NutrientsEntry.buildNutrientWithProductId(
+        //     Long.parseLong(fnv.mproductID));
+
+        Uri nutrientWithProductIdURI = NutrientContract.NutrientsEntry.CONTENT_URI;
         Cursor data = context.getContentResolver().query(nutrientWithProductIdURI, NUTRIENT_COLUMNS, null,
                 null, null);
         Vector<ContentValues> cVVector = new Vector<ContentValues>(data.getCount());
-       // cVVector = new Vector<ContentValues>(data.getCount());
+        // cVVector = new Vector<ContentValues>(data.getCount());
         if (data.moveToFirst()) {
             do {
                 ContentValues cv = new ContentValues();
@@ -72,8 +73,8 @@ public class ListProvider implements RemoteViewsService.RemoteViewsFactory {
         }
 
 
-
     }
+
     @Override
     public void onCreate() {
 
@@ -98,7 +99,7 @@ public class ListProvider implements RemoteViewsService.RemoteViewsFactory {
     public RemoteViews getViewAt(int i) {
         final RemoteViews remoteView = new RemoteViews(
                 context.getPackageName(), R.layout.widget_list);
-        Nutrients listItem =  widgetNutrientsList.get(i);
+        Nutrients listItem = widgetNutrientsList.get(i);
         remoteView.setTextViewText(R.id.widget_nutrient_name, listItem.getNutrientName());
         remoteView.setTextViewText(R.id.widget_nutrient_unit, listItem.getNutrientUnit());
         remoteView.setTextViewText(R.id.widget_nutrient_quan, listItem.getNutrientQuantity());

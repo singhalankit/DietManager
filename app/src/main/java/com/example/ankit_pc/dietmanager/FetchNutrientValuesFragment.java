@@ -42,9 +42,17 @@ import java.util.Vector;
 public class FetchNutrientValuesFragment extends Fragment implements android.support.v4.app.LoaderManager.LoaderCallbacks<Cursor> {
     private NutrientAdapter mNutrientsAdapter;
     private static final int NUTIRENT_LOADER = 0;
+    private Context context = null;
     private final String LOG_TAG = FetchNutrientValuesFragment.class.getSimpleName();
-    Intent nutrientsIntent = getActivity().getIntent();
-    String mproductID = nutrientsIntent.getStringExtra("Product ID");
+
+    private static final String[] NUTRIENT_COLUMNS = {
+            NutrientContract.NutrientsEntry.COLUMN_NUTRIENT_NAME,
+            NutrientContract.NutrientsEntry.COLUMN_NUTRIENT_QUAN,
+            NutrientContract.NutrientsEntry.COLUMN_NUTRIENT_UNIT
+    };
+
+    //Intent nutrientsIntent = getActivity().getIntent();
+    // String mproductID = nutrientsIntent.getStringExtra("Product ID");
 
     /*@Override
     public void onAttach(Activity activity) {
@@ -56,6 +64,29 @@ public class FetchNutrientValuesFragment extends Fragment implements android.sup
 
     public FetchNutrientValuesFragment() {
 
+
+    }
+
+    public void updateSelectedColumnNo() {
+
+        Uri getNutrientData = NutrientContract.NutrientsEntry.CONTENT_URI;
+        Cursor data = getActivity().getContentResolver().query(getNutrientData, NUTRIENT_COLUMNS, null,
+                null, null);
+        Log.v(LOG_TAG, "No. of records are " + data.getCount());
+
+        if (data.getCount() > 0) {
+            ContentValues updateSelectedtoN = new ContentValues();
+            updateSelectedtoN.put(NutrientContract.NutrientsEntry.COLUMN_SELECTED, "N"); //mark as not selected
+
+            int updatedRows = getActivity().getContentResolver().update(
+                    NutrientContract.NutrientsEntry.CONTENT_URI,
+                    updateSelectedtoN,
+                    null,
+                    null
+            );
+
+            Log.v(LOG_TAG, "No. of rows updated " + updatedRows);
+        }
     }
 
 
@@ -63,6 +94,7 @@ public class FetchNutrientValuesFragment extends Fragment implements android.sup
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         getLoaderManager().initLoader(NUTIRENT_LOADER, null, this);
         super.onActivityCreated(savedInstanceState);
+        updateSelectedColumnNo();
         getNutrientsData();
 
     }
@@ -265,6 +297,7 @@ public class FetchNutrientValuesFragment extends Fragment implements android.sup
                     nutrientValues.put("nutrient_name", title);
                     nutrientValues.put("nutrient_quan", quantity);
                     nutrientValues.put("product_id", productID);
+                    nutrientValues.put("current_selected", "Y");
 
 
                     cVVector.add(nutrientValues);
@@ -289,34 +322,42 @@ public class FetchNutrientValuesFragment extends Fragment implements android.sup
                     }
                     Log.v(LOG_TAG, "FetchNutrientsTask Complete. " + inserted + " Inserted");
 
+
+                    cur = mContext.getContentResolver().query(nutrientWithProductIdURI,
+                            null, null, null, null);
+                    // mNutrientsAdapter.changeCursor(cur);
+                } else {
+                    ContentValues updateSelectedtoY = new ContentValues();
+                    updateSelectedtoY.put(NutrientContract.NutrientsEntry.COLUMN_SELECTED, "Y"); //mark as not selected
+
+                    int updatedRowsY = getActivity().getContentResolver().update(
+                            NutrientContract.NutrientsEntry.CONTENT_URI,
+                            updateSelectedtoY,
+                            NutrientContract.NutrientsEntry.COLUMN_PRODUCT_ID + " = ?",
+                            new String[]{Long.toString(productID)}
+                    );
+                    Log.v(LOG_TAG, "Rows updated to Y are " + updatedRowsY);
+
+                   /* cVVector = new Vector<ContentValues>(cur.getCount());
+                    if (cur.moveToFirst()) {
+                        do {
+                            ContentValues cv = new ContentValues();
+                            DatabaseUtils.cursorRowToContentValues(cur, cv);
+                            cVVector.add(cv);
+                        } while (cur.moveToNext());
+                    }
+
+                    Log.v(LOG_TAG, "FetchNutrientsTask Complete. " + cVVector.size() + " Inserted");
+
+
+                    for (int i = 0; i < cVVector.size(); i++) {
+                        ContentValues nutrientValues = cVVector.elementAt(i);
+                        Nutrients newNutrient = new Nutrients(nutrientValues.getAsString(NutrientContract.NutrientsEntry.COLUMN_NUTRIENT_NAME)
+                                , nutrientValues.getAsString(NutrientContract.NutrientsEntry.COLUMN_NUTRIENT_UNIT)
+                                , nutrientValues.getAsString(NutrientContract.NutrientsEntry.COLUMN_NUTRIENT_QUAN));
+                        nutrientsList.add(i, newNutrient);
+                    }*/
                 }
-
-
-                cur = mContext.getContentResolver().query(nutrientWithProductIdURI,
-                        null, null, null, null);
-                // mNutrientsAdapter.changeCursor(cur);
-
-
-                cVVector = new Vector<ContentValues>(cur.getCount());
-                if (cur.moveToFirst()) {
-                    do {
-                        ContentValues cv = new ContentValues();
-                        DatabaseUtils.cursorRowToContentValues(cur, cv);
-                        cVVector.add(cv);
-                    } while (cur.moveToNext());
-                }
-
-                Log.v(LOG_TAG, "FetchNutrientsTask Complete. " + cVVector.size() + " Inserted");
-
-
-                for (int i = 0; i < cVVector.size(); i++) {
-                    ContentValues nutrientValues = cVVector.elementAt(i);
-                    Nutrients newNutrient = new Nutrients(nutrientValues.getAsString(NutrientContract.NutrientsEntry.COLUMN_NUTRIENT_NAME)
-                            , nutrientValues.getAsString(NutrientContract.NutrientsEntry.COLUMN_NUTRIENT_UNIT)
-                            , nutrientValues.getAsString(NutrientContract.NutrientsEntry.COLUMN_NUTRIENT_QUAN));
-                    nutrientsList.add(i, newNutrient);
-                }
-
 
                 //Nutrients newNutrient = new Nutrients(title,unit,quantity);
                 // nutrientsList.add(i,newNutrient);

@@ -7,6 +7,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,23 +17,28 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 
+import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 import com.google.android.gms.common.api.GoogleApiClient;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import static android.R.attr.name;
+
 
 public class MainActivity extends AppCompatActivity {
 
 
-    private Tracker easyTracker = null;
+    private Tracker mTracker;
+    private static final String LOG_TAG = "MainActivity";
 
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
-    @BindView(R.id.adView) AdView mAdView;
+    @BindView(R.id.adView)
+    AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,12 +54,32 @@ public class MainActivity extends AppCompatActivity {
 
         mAdView.loadAd(adRequest);
 
+        AnalyticsApplication application = (AnalyticsApplication) getApplication();
+        mTracker = application.getDefaultTracker();
+
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        String name = LOG_TAG;
+        Log.i(LOG_TAG, "Setting screen name: " + name);
+        mTracker.setScreenName("ScreenName~" + name);
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
 
 
     }
 
     public void onContinueClick(View v) {
         Intent categoryIntent = new Intent(getApplication(), FoodCategory.class);
+
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Share")
+                .build());
+
         startActivity(categoryIntent);
     }
 

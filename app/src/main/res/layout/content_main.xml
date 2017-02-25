@@ -5,6 +5,7 @@
     xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -24,19 +25,23 @@
         ads:adSize="BANNER"
         ads:adUnitId="ca-app-pub-6966497821155933/2587564005"></com.google.android.gms.ads.AdView>
 
-    <TextView
+    <ImageView
         android:layout_weight="3"
         android:layout_width="match_parent"
-
+        android:src="@drawable/fruits"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+         />
 
 
     <Button
         android:layout_weight="1"
+        android:background="@color/common_google_signin_btn_text_light_default"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textStyle="bold"
         android:onClick="onContinueClick"
+        android:textColor="@color/colorPrimary"
 
         android:text="@string/continue_button"
 

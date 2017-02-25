@@ -6,7 +6,7 @@ android {
         config {
             keyAlias 'Diet Manager'
             keyPassword 'singhal123'
-            storeFile file('E:/AndroidStudioProjects/DietManager_v1.3/keystore.jks')
+            storeFile file('../keystore.jks')
             storePassword 'singhal123'
         }
     }
@@ -42,5 +42,7 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 
 }
+
+apply plugin: 'com.google.gms.google-services'
 
 

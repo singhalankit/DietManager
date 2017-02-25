@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">DietManager</string>
+    <string name="title_food_category">Food Category</string>
+    <string name="title_fruits">FRUITS AND FRUIT JUICES</string>
+    <string name="title_nuts">NUTS</string>
+    <string name="title_baby_food">Baby Foods</string>
+    <string name="title_dairy_products">Dairy and Egg Products</string>
     <string name="nutrient_name">Nutrient Name</string>
     <string name="nutrient_unit">Nutrient Unit</string>
     <string name="nutrient_quan">Nutrient Quantity</string>

@@ -8,14 +8,14 @@ import android.net.Uri;
 import android.widget.RemoteViews;
 
 /**
- * Created by ANKIT_PC on 18-02-2017.
+ * Created by ANKIT_PC on 23-02-2017.
  */
-public class CurrentNutrientWidgetProvider extends AppWidgetProvider {
+
+public class NutrientWidgetProvider extends AppWidgetProvider {
 
 
     @Override
-    public void onUpdate(Context context, AppWidgetManager
-            appWidgetManager, int[] appWidgetIds) {
+    public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
 
 /*int[] appWidgetIds holds ids of multiple instance
  * of your widget
@@ -31,14 +31,12 @@ public class CurrentNutrientWidgetProvider extends AppWidgetProvider {
         super.onUpdate(context, appWidgetManager, appWidgetIds);
     }
 
-
-
     private RemoteViews updateWidgetListView(Context context,
                                              int appWidgetId) {
 
         //which layout to show on widget
         RemoteViews remoteViews = new RemoteViews(
-                context.getPackageName(),R.layout.widget_layout);
+                context.getPackageName(), R.layout.widget_layout);
 
         //RemoteViews Service needed to provide adapter for ListView
         Intent svcIntent = new Intent(context, WidgetService.class);
@@ -52,12 +50,7 @@ public class CurrentNutrientWidgetProvider extends AppWidgetProvider {
         remoteViews.setRemoteAdapter(appWidgetId, R.id.widget_nutrients_listView,
                 svcIntent);
         //setting an empty view in case of no data
-        //remoteViews.setEmptyView(R.id.widget_nutrients_listView);
+
         return remoteViews;
     }
-
-
-
-
-
 }

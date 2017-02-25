@@ -9,7 +9,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/vegetables"
+        android:textAlignment="center"
+        android:scaleType="centerCrop"
         android:contentDescription="@string/vegetables"
+        android:background="@color/cyan"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:textStyle="bold"
         android:onClick="onClickVegetables"
         android:id="@+id/button_vegetables" />
 
@@ -20,6 +26,10 @@
         android:text="@string/fruits"
         android:contentDescription="@string/fruits"
         android:onClick="onClickFruits"
+        android:background="@color/cyan"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:textStyle="bold"
         android:id="@+id/button_fruits" />
 
     <Button
@@ -29,6 +39,10 @@
         android:text="@string/nuts"
         android:contentDescription="@string/nuts"
         android:onClick="onClickNuts"
+        android:background="@color/cyan"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:textStyle="bold"
         android:id="@+id/button_nuts" />
 
     <Button
@@ -38,6 +52,10 @@
         android:text="@string/baby_food"
         android:contentDescription="@string/baby_food"
         android:onClick="onClickBabyFood"
+        android:background="@color/cyan"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:textStyle="bold"
         android:id="@+id/button_baby" />
 
     <Button
@@ -47,6 +65,10 @@
         android:text="@string/dairy"
         android:contentDescription="@string/dairy"
         android:onClick="onClickDairy"
+        android:background="@color/cyan"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:textStyle="bold"
         android:id="@+id/button_dairy" />
 
 

@@ -30,21 +30,10 @@ public class NutrientContract {
 
         public static final String COLUMN_PRODUCT_ID = "product_id";
         public static final String COLUMN_NUTRIENT_UNIT = "nutrient_unit";
-        //public static final String COLUMN_NUTRIENT_ID = "nutrient_id";
+        public static final String COLUMN_SELECTED = "current_selected";
         public static final String COLUMN_NUTRIENT_NAME = "nutrient_name";
         public static final String COLUMN_NUTRIENT_QUAN = "nutrient_quan";
 
-        /**
-         * This method creates a URI for addressing a movie according to its poster URL
-         *
-         * @param posterUrl The stringly-typed URL fetched from the cloud service
-         * @return The URI with the given {@code posterUrl} appended
-         */
-        public static Uri buildMovieWithPoster(String posterUrl) {
-            return CONTENT_URI.buildUpon()
-                    .appendPath(posterUrl.substring(1)) //remove the heading slash
-                    .build();
-        }
 
         /**
          * Build a Uri for a record of the table, using the ID

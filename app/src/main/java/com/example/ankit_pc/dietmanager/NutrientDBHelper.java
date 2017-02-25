@@ -11,9 +11,9 @@ import android.util.Log;
 public class NutrientDBHelper extends SQLiteOpenHelper {
     private final String LOG_TAG = NutrientDBHelper.class.getSimpleName();
 
-    private static final int DATABASE_VERSION = 7;
+    private static final int DATABASE_VERSION = 8;
 
-    static final String DATABASE_NAME = "nutrient_info_v1.1.db";
+    static final String DATABASE_NAME = "nutrient_info_v1.2.db";
 
     public NutrientDBHelper(Context context) {
 
@@ -30,6 +30,7 @@ public class NutrientDBHelper extends SQLiteOpenHelper {
                 + NutrientContract.NutrientsEntry.COLUMN_PRODUCT_ID + " INTEGER NOT NULL, "
                 + NutrientContract.NutrientsEntry.COLUMN_NUTRIENT_NAME + " TEXT NOT NULL, "
                 + NutrientContract.NutrientsEntry.COLUMN_NUTRIENT_UNIT + " TEXT NOT NULL, "
+                + NutrientContract.NutrientsEntry.COLUMN_SELECTED + " TEXT , "
                 + NutrientContract.NutrientsEntry.COLUMN_NUTRIENT_QUAN + " INTEGER NOT NULL ); ";
 
 
