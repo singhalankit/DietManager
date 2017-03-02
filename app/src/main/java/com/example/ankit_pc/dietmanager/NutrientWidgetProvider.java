@@ -36,7 +36,7 @@ public class NutrientWidgetProvider extends AppWidgetProvider {
 
         //which layout to show on widget
         RemoteViews remoteViews = new RemoteViews(
-                context.getPackageName(), R.layout.widget_layout);
+                context.getPackageName(), R.layout.widget_list);
 
         //RemoteViews Service needed to provide adapter for ListView
         Intent svcIntent = new Intent(context, WidgetService.class);
@@ -47,7 +47,7 @@ public class NutrientWidgetProvider extends AppWidgetProvider {
         svcIntent.setData(Uri.parse(
                 svcIntent.toUri(Intent.URI_INTENT_SCHEME)));
         //setting adapter to listview of the widget
-        remoteViews.setRemoteAdapter(appWidgetId, R.id.widget_nutrients_listView,
+        remoteViews.setRemoteAdapter(appWidgetId, R.id.widget_list_view,
                 svcIntent);
         //setting an empty view in case of no data
 

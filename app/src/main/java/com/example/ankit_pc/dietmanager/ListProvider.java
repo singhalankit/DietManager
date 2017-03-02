@@ -45,7 +45,7 @@ public class ListProvider implements RemoteViewsService.RemoteViewsFactory {
     private void populateListItem() {
 
 
-        FetchNutrientValuesFragment fnv = new FetchNutrientValuesFragment();
+
         //Uri nutrientWithProductIdURI = NutrientContract.NutrientsEntry.buildNutrientWithProductId(
         //     Long.parseLong(fnv.mproductID));
 
@@ -98,11 +98,11 @@ public class ListProvider implements RemoteViewsService.RemoteViewsFactory {
     @Override
     public RemoteViews getViewAt(int i) {
         final RemoteViews remoteView = new RemoteViews(
-                context.getPackageName(), R.layout.widget_list);
+                context.getPackageName(), R.layout.widget_layout);
         Nutrients listItem = widgetNutrientsList.get(i);
-        remoteView.setTextViewText(R.id.widget_nutrient_name, listItem.getNutrientName());
-        remoteView.setTextViewText(R.id.widget_nutrient_unit, listItem.getNutrientUnit());
-        remoteView.setTextViewText(R.id.widget_nutrient_quan, listItem.getNutrientQuantity());
+        remoteView.setTextViewText(R.id.widgetNutrient, listItem.getNutrientName());
+        remoteView.setTextViewText(R.id.widgetUnit, listItem.getNutrientUnit());
+        remoteView.setTextViewText(R.id.widgetQuantity, listItem.getNutrientQuantity());
 
         return remoteView;
     }
