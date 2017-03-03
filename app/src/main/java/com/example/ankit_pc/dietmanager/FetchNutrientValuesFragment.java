@@ -152,7 +152,7 @@ public class FetchNutrientValuesFragment extends Fragment implements android.sup
         private final String LOG_TAG = formAPIURL.class.getSimpleName();
         String expectedFormat = "json";
         String nutrientType = "b";
-        String apiID = "D21j3zXmboWioyWvMWLZUAlIY179gJLDqJolBqsu";
+        //String apiID = "D21j3zXmboWioyWvMWLZUAlIY179gJLDqJolBqsu";
         private final Context mContext;
 
         public formAPIURL(Context context, NutrientAdapter nutrientsAdapter) {
@@ -185,7 +185,7 @@ public class FetchNutrientValuesFragment extends Fragment implements android.sup
                         .appendQueryParameter(PRODUCTID, productID)
                         .appendQueryParameter(TYPE, nutrientType)
                         .appendQueryParameter(FORMAT, expectedFormat)
-                        .appendQueryParameter(APIKEY, apiID)
+                        .appendQueryParameter(APIKEY, config.API_KEY)
                         .build();
 
                 URL url = null;
